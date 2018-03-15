@@ -5,23 +5,7 @@ text detection mainly based on ctpn (connectionist text proposal network). It is
 # setup
 - requirements: tensorflow1.3, cython0.24, opencv-python, easydict,(recommend to install Anaconda)
 - if you do not have a gpu device,follow here to [setup](https://github.com/eragonruan/text-detection-ctpn/issues/43)
-```
-# (1) Set "USE_GPU_NMS " in the file ./ctpn/text.yml as "False"
-# (2) Set the "__C.USE_GPU_NMS" in the file ./lib/fast_rcnn/config.py as "False";
-# (3) Comment out the line "from lib.utils.gpu_nms import gpu_nms" in the file ./lib/fast_rcnn/nms_wrapper.py;
-# (4) To rebuild the setup.py:
-
-
-# bash
-export CFLAGS=~/anaconda2/lib/python2.7/site-packages/numpy/core/include
-export CFLAGS=/Users/zhangxin/anaconda2/envs/venv_py3/lib/python3.5/site-packages/numpy/core/include
-python setup.py build
-# then copy .so to xxx/text-detection-ctpn-master/lib/utils
-cd text-detection-ctpn-master
-python demo.py
-
-```
-
+or read [gpu2cpu.md](gpu2cpu.md)
 - if you have a gpu device, build the library by
 ```shell
 cd lib/utils

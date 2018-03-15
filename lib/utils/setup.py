@@ -1,3 +1,4 @@
+# Author: struCoder
 from Cython.Build import cythonize
 import numpy as np
 from distutils.core import setup
